@@ -1,0 +1,22 @@
+include mixins.pug
+footer
+    .max-width.flex
+        .col-quarter
+            img(src=locals.footer.logo,alt="")
+        .col-half
+            +menu(locals.header.menu)
+        .col-quarter
+            .social-nav
+                for link in locals.footer.social_links
+                    a(href=link.url,title=link.icon)
+                        span.fa-1x.fa-stack
+                            i.fa.fa-circle.fa-stack-2x
+                            i(class="fa fa-stack-1x fa-inverse fa-"+link.icon)      
+            .copyright
+                - let thisDate = new Date()
+                - let thisYear = thisDate.getFullYear()
+                p
+                    span.copyright="© " + thisYear + " " + locals.footer.copyright
+                    |  |  
+                    span.pp_link
+                        a(href=locals.footer.pp_link.url)=locals.footer.pp_link.label

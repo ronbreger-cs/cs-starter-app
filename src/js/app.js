@@ -1,0 +1,3 @@
+/*
+Look, Ma - no js!
+*/

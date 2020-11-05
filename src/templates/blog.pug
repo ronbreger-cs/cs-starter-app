@@ -1,0 +1,20 @@
+extends ./inc/page.pug
+block page_id
+ - let page_id = "Blog"
+block content
+  main
+    +hero(locals.blog.hero,"short")
+    .max-width.blog-roll.padding-top
+      for entry in locals.blog.entries
+        a.blog-entry.padding-bottom(href=entry.url)
+          .thumb
+            img(src=entry.thumb,alt=entry.title)
+          .content
+            .inner
+              h3=entry.title
+              cite
+                span.date=entry.date
+                span.author=entry.author
+              p.description=entry.description
+              p.cta Read More
+

@@ -1,0 +1,18 @@
+extends ./inc/page.pug
+block page_id
+ - let page_id = "About Us"
+block content
+  main
+    +hero(locals.about.hero,"short")
+    .max-width
+      .buckets.padding-both
+        for bucket in locals.about.buckets
+          .bucket
+            .inner
+              h3=bucket.header
+              p=bucket.copy
+        .related-links
+          h3=locals.about.related_links.header
+          for link in locals.about.related_links.links
+            p
+              a(href=link.url)=link.label

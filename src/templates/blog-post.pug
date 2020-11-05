@@ -1,0 +1,22 @@
+extends ./inc/page.pug
+block page_id
+ - let page_id = "Blog Post"
+block content
+  main.blog-post  
+    .max-width.flex.padding-both.tall
+        .col-quarter
+            .page-thumb.padding-bottom
+                img(src=locals.blog.entries[0].thumb,alt=locals.blog.entries[0].title)
+        .col-half
+            h2=locals.blog.entries[0].title
+            p.blog-meta
+                span.date=locals.blog.entries[0].date
+                span.author=locals.blog.entries[0].author
+            .blog-content!=locals.blog.entries[0].content
+        .col-quarter
+            .padding-left
+                h3 Related Blogs
+                p
+                    a(href="#") Related post
+                p
+                    a(href="#") Related post

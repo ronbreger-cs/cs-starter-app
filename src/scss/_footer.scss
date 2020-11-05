@@ -1,0 +1,31 @@
+footer {
+  padding: 30px 0;
+  background: $blue;
+  color: $white;
+  a {
+    color: $white;
+  }
+  nav {
+    padding: 30px 0;
+  }
+  .fa-stack-1x {
+    color: $blue;
+  }
+  @include bp(m) {
+    .max-width {
+      display: flex;
+    }
+    nav,
+    .social-nav {
+      padding-top: 12px;
+    }
+    .social-nav,
+    .copyright {
+      text-align: right;
+    }
+    .copyright {
+      padding-top: 12px;
+      font-size: 14px;
+    }
+  }
+}

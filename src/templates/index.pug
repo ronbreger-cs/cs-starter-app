@@ -1,0 +1,21 @@
+extends ./inc/page.pug
+block page_id
+ - let page_id = "Home"
+block content
+  main
+    +hero(locals.home.hero)
+    .max-width
+      .top-section.padding-top
+          h2=locals.home.top_content.header
+          p=locals.home.top_content.copy
+      .buckets.padding-both
+        for bucket in locals.home.buckets
+          .bucket
+            .inner
+              h3=bucket.header
+              p=bucket.copy
+        .related-links
+          h3=locals.home.related_links.header
+          for link in locals.home.related_links.links
+            p
+              a(href=link.url)=link.label

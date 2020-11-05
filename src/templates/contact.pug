@@ -1,0 +1,20 @@
+extends ./inc/page.pug
+block page_id
+ - let page_id = "Contact Us"
+block content
+  main.contact-us
+    .max-width.flex.padding-both.tall
+      .col-half
+        h2=locals.contact.header
+        p=locals.contact.copy
+        for address in locals.contact.addresses
+          .address-block.padding-bottom
+            h3=address.location_name
+            p=address.address_line_1
+            p=address.address_line_2
+            p.phone
+              a(href="tel:"+address.phone)=address.phone
+            p.email
+              a(href="mailto:"+ address.email)=address.email
+      .col-half
+        .contact-form

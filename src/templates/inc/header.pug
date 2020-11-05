@@ -1,0 +1,7 @@
+include mixins.pug
+header
+    .max-width
+        .wrapper-logo
+            a(href="/",title=locals.company_name)
+                img.logo(src=locals.header.logo,alt="")
+        +menu(locals.header.menu,page_id)

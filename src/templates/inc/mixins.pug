@@ -1,0 +1,12 @@
+mixin menu(menu,current)
+  nav
+    ul
+      for link,idx in menu
+        li
+          a(href=link.url,class=link.label===current ? "active" : "")=link.label
+mixin hero(data,classname)
+  div(class="hero" + (classname ? " " + classname : ""))
+    .max-width
+      .content
+        h1=data.headline
+        p=data.copy

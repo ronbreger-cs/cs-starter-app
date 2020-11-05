@@ -1,0 +1,112 @@
+//Basic Styles
+body {
+  font-family: "Lato", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  padding: 0;
+  h1 {
+    font-weight: 300;
+  }
+  h2 {
+    font-size: 36px;
+  }
+  h3 {
+    color: $purple;
+  }
+  a {
+    text-decoration: none;
+    color: $text-gray;
+    &:hover {
+      color: $purple;
+    }
+  }
+}
+.max-width {
+  width: 90%;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+.padding-top {
+  padding-top: $gutter-width;
+}
+.padding-bottom {
+  padding-bottom: $gutter-width;
+}
+.padding-both {
+  padding-top: $gutter-width;
+  padding-bottom: $gutter-width;
+  &.tall {
+    @include bp(m) {
+      padding-top: $gutter-width * 4;
+      padding-bottom: $gutter-width * 2;
+    }
+  }
+}
+.padding-left {
+  padding-left: $gutter-width;
+}
+nav {
+  ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    li {
+      display: inline-block;
+      padding-left: 20px;
+      a {
+        font-weight: 400;
+      }
+    }
+  }
+}
+.top-section {
+  h2,
+  p {
+    margin: $gutter-width/4 0;
+    padding: 0;
+  }
+}
+.buckets {
+  h3 {
+    margin: 0;
+  }
+  .bucket {
+    grid-row: 1;
+    background: $bucket-gray;
+    .inner {
+      padding: 12px;
+    }
+  }
+  .related-links {
+    grid-column: 4;
+    grid-row: 1;
+    h3 {
+      text-transform: uppercase;
+      padding-top: 12px;
+    }
+    a {
+      font-weight: 400;
+      color: $blue;
+      text-decoration: underline;
+    }
+    p {
+      margin: 0.5em 0;
+    }
+  }
+  @include bp(m) {
+    display: grid;
+    grid-template-columns: 25% 25% 25% 25%;
+    grid-gap: $gutter-width/2;
+  }
+}
+.flex {
+  @include bp(m) {
+    display: flex;
+    .col-quarter {
+      flex: 1 1 25%;
+    }
+    .col-half {
+      flex: 1 1 50%;
+    }
+  }
+}
